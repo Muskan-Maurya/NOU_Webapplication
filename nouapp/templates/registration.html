@@ -1,0 +1,117 @@
+{% extends "parent.html" %}
+{% load static %}
+{% block body %}
+<br/><h1 style="text-align:center; color:blue;">Student Registration Form</h1><br/>
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+{% endif %}
+<div class="row">
+    <div class="col-sm-4">
+        <img class="  w-100 h-20 mt-5" src="{% static 'images/regis.png'%}"/>
+        <img class="  w-100 h-60 mt-5" src="{% static 'images/regis1.png'%}"/>
+    </div>
+    <div class="col-sm-8">
+        <form class="form-group" method="POST" action="{% url 'nouapp:registration'%}"  >
+            {% csrf_token %}
+            <table class="table table-dark" style="width:80%; margin:auto; box-shadow:5px 8px 8px #001a66;" >
+                <tr>
+                    <td>Enter Roll No.</td>
+                    <td><input type="number" name="rollno" class="form-control" ></td>
+                </tr>
+                <tr>
+                    <td>Enter Name</td>
+                    <td><input type="text" name="name" class="form-control" ></td>
+                </tr>
+                <tr>
+                    <td>Enter Father Name</td>
+                    <td><input type="text" name="fname" class="form-control" ></td>
+                </tr>
+                <tr>
+                    <td>Enter Mother Name</td>
+                    <td><input type="text" name="mname" class="form-control" ></td>
+                </tr>
+                <tr>
+                    <td>Select Gender</td>
+                    <td><input type="radio" name="gender" value="male" class="form-check-input">Male
+                        <input type="radio" name="gender" value="female" class="form-check-input">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter D.O.B.</td>
+                    <td><input type="date" name="dob" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Enter Address</td>
+                    <td><textarea name="address" class="form-control"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Select Program</td>
+                    <td>
+                        <Select name="program" class="form-control">
+                            <option selected>--Select Program</option>
+                            <option value="B.Tech.">B.Tech.</option>
+                            <option value="M.Tech.">M.Tech.</option>
+                        </Select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select Branch</td>
+                    <td>
+                        <Select name="branch" class="form-control">
+                            <option selected>--Select Branch</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Civil">Civil</option>
+                        </Select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select Year</td>
+                    <td>
+                        <Select name="year" class="form-control">
+                            <option selected>--Select year</option>
+                            <option value="First Year">First Year</option>
+                            <option value="Second Year">Second Year</option>
+                            <option value="Third Year">Third Year</option>
+                            <option value="Final Year">Final Year</option>
+                        </Select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Contact No.</td>
+                    <td><input type="number" name="contactno" class="form-control"/></td>
+                </tr>
+                <tr>
+                    <td>Enter Email Address</td>
+                    <td><input type="text" name="emailaddress" class="form-control"/></td>
+                </tr>
+                <tr>
+                    <td>Enter Password</td>
+                    <td><input type="password" name="password" class="form-control"/></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="password" name="confirmpassword" class="form-control"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        Enter Captcha Code
+                    </td>
+                    <td>{{form.captcha}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><button type="submit" class="btn btn-success">Register</button></td>
+                </tr>
+            </table>
+        </form>
+</div>
+</div>
+<br/><br/>
+
+{% endblock %}

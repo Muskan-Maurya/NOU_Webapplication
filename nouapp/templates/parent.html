@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NOU E-Gyan Portal</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- /link css bootsrtap -->
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <!-- Above nav bar -->
+
+    <div class="nav1">
+      <div class="row p-3" style="background-color:#e65c00; border:1px dashed white; outline:2px dashed white; outline-offset:-5px;">
+        <div class="col-lg-3 col-12 col-md-3 " style="color: white;"> <i class="bi bi-telephone-fill" style="color: white;"></i></t> +91
+          7080102007</div>
+        <div class="col-lg-4 col-12 col-md-5 " style="color: white;"><i class="bi bi-envelope-at-fill" style="color: white;"></i>
+          nouegyanhelp@gmail.com
+        </div>
+        <div class="col-lg-5 col-12 col-md-4 " id="Time" style="color: white;"> For Admission related query, call on helpline No. 9341508580 </div>
+      </div>
+
+      <!-- Nav Bar -->
+
+    <div>
+      <nav class="navbar navbar-expand-lg " >
+        <div class="container-fluid" style="background-color:#e65c00;">
+          <a class="navbar-brand " href="#" style="color:white; font-weight:600;">
+            <img src="{% static 'images/logo.jpeg' %}" alt="Bootstrap" width="60" height="60" class="d-inline-block" style="border-radius:50%;"/>
+           Nalanda Open University
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active " aria-current="page" href="{% url 'nouapp:index' %}" style="color:white"><i class="bi bi-house-door-fill"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#" style="color:white;"><i class="bi bi-people-fill"></i>About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'nouapp:registration' %}" style="color:white;"><i class="bi bi-file-text-fill"></i> Registration</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'nouapp:login' %}" style="color:white;"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'nouapp:contactus' %}" style="color:white;"><i class="bi bi-telephone-fill"></i> Contact Us</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn" type="submit" style="background-color:#001a66; color: white;">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav> 
+      <!-- welcome content -->
+      <div class="container" style=" height: 100px;">
+        <h2 style="text-align:center; font-family: ʟᴀᴛɪɴ ꜱᴍᴀʟʟ ᴄᴀᴘɪᴛᴀʟ; color:#001a66; font-weight:800;">
+          <img src="{%static 'images/hand1.png'%}" height="50px" width="10%">
+          Welcome to NOU E-Gyan Portal
+          <img src="{%static 'images/hand1.png'%}" height="50px" width="10%">
+        </h2>
+        <p style="text-align:center;color:#07374a;">A Concept by Nalanda Open University</p>
+      </div>
+      <!-- carousel images  -->
+
+      <div id="carouselExampleRide" class="carousel slide mt-1" data-bs-ride="true">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/s6.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/s1.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/s33.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div>
+        <div class="text-light mt-2" style="background-color:#cc6600;">
+          
+          <ul >
+            <marquee onmouseover="stop()" onmouseout="start()" direction="scroll" scrollamount="5">
+              {% for n in nw %}
+              <li style="display:inline;" class="mx-4">{{n.newstext}}</li>
+              {% endfor %}
+            </marquee>
+          </ul>
+          
+        </div>
+      </div>
+      <!--  Main content -->
+
+      <div class=" row mt-2 ">
+          <div class="col-sm-12 ">
+            {% block body %}
+
+            {% endblock %}
+          </div>
+      </div>
+
+        <!--  Footer -->
+
+      <div class="row mt-2 ">
+        <div class="col-sm-4" style="min-height:250px; background-color: #b34700;">
+          <img src="{% static 'images/logo.jpeg' %}" class="mt-4"width="90" height="90"  style="border-radius:50%; margin-left:40%; border:5px solid #ff9900;"/>
+          <p class="container mt-4 " style="color: white;">Nalanda Open University is a State Open University duly established under the Act of Bihar Government and is also recognized by Distance Education Council, IGNOU, Maidan Garhi, New Delhi.</p>
+        </div>
+        <div class="col-sm-4" style="min-height:250px ;background-color: #b34700;">
+        <h3 class="mt-4" style="color: white; margin-left:30%;">Useful Links</h3><br/>
+        <ul style="color: white; margin-left:26%;">
+          <li>Home</li><br/>
+          <li>About Us</li><br/>
+          <li>Courses</li><br/>
+          <li>Contact Us</li><br/>
+          <li>Registration</li>
+        </ul>
+        </div>
+        <div class="col-sm-4" style="min-height:250px; background-color: #b34700;">
+        <h3 class="container mt-4" style="color:white;">Contact Info</h3><br/>
+        <p style="color:white;"><i class="bi bi-geo-alt" style="color: white;"></i> 2nd/3rd Floor, Biscomaun Bhawan, Gandhi Maidan, Patna 800 001 (BIHAR).</p>
+        <p style="color:white;"><i class="bi bi-telephone-fill" style="color: white;"></i> +91 7080102007<br/>
+          Give us a call</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
+

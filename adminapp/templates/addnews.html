@@ -1,0 +1,45 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;color:black">News Mangement</h1>   
+              <form class="form-group" action="{% url 'adminapp:addnews'%}" method="post">
+                {% csrf_token %}
+                    <table class="table table-bordered" style="width:60%; margin:auto;">
+                        <tr>
+                            <td>Enter News</td>
+                            <td>
+                                <textarea name="newstext" class="form-control text-light" required></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td colspan="2" style="text-align: center;">
+                                <button type="submit" class="btn btn-success">Add News</button>
+                            </td>
+                        </tr>
+                    </table><br/>
+                    <table class="table table-bordered " style="width:60%; margin:auto;" >
+                        <tr>
+                            <th>#</th>
+                            <th>News</th>
+                            <th>Posted Date</th>
+                            <th>Delete</th>
+                        </tr>
+                        {% for n in nw %}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td>{{n.newstext}}</td>
+                                <td>{{n.posteddate}}</td>
+                                <td>
+                                    <a href="{% url 'adminapp:delnews' nid=n.nid %}">
+                                        <button type="button" class="btn btn-danger">Delete</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+              </form>
+        </div>
+    </div>
+{% endblock body %}

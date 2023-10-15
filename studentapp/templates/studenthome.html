@@ -1,0 +1,93 @@
+{% extends "studentparent.html" %}
+{% load static %}
+{% block body %}
+<style>
+    .brd{
+        height:12rem;
+        border:1px solid black;
+        color:black;
+        border-radius:2rem;
+        margin:1rem;
+        background-color:#f2f2f2;
+        box-shadow:8px 8px 10px black;
+    }
+    .imgs{
+        height:2rem;
+        width:2rem;
+        border-radius:1rem;
+	    margin-top:0.5rem;
+    }
+    .tbl{
+        background-color:#f2f2f2;
+        box-shadow:8px 8px 10px black;
+    }
+</style>
+<h1 style="text-align: center;color:black">Welcome</h1>
+<div class="row">
+    <h1  style="color:black;">Attendence</h1>
+    <div class="col-sm-2 brd">
+        <img src="{%static 'assets/images/cc1.png'%}" class="imgs"/>
+        <h3>Cloud Computing <br/>22/30</h3>
+        <p >Last 24 hours</p>
+    </div>
+    <div class="col-sm-2 brd">
+        <img src="{%static 'assets/images/os1.png'%}" class="imgs"/>
+        <h3>Operating System <br/>24/30</h3>
+        <p >Last 24 hours</p>
+    </div>
+    <div class="col-sm-2 brd">
+        <img src="{%static 'assets/images/ml.png'%}" class="imgs"/>
+        <h3>Machine Learning <br/>28/30</h3>
+        <p >Last 24 hours</p>
+    </div>
+    <div class="col-sm-2 brd">
+        <img src="{%static 'assets/images/ds.png'%}" class="imgs"/>
+        <h3>Data Structure<br/>26/30</h3>
+        <p >Last 24 hours</p>
+    </div>
+    <div class="col-sm-2 brd">
+        <img src="{%static 'assets/images/dbms1.png'%}" class="imgs"/>
+        <h3>Database Management<br/>27/30</h3>
+        <p >Last 24 hours</p>
+    </div>
+</div><br/>
+<div class="row">
+    <h1  style="color:black;">Time Table</h1>
+    <div class="col-sm-12">
+        <table class="table table-bordered tbl">
+            <thead>
+              <tr>
+                <th scope="col">S.No.</th>
+                <th scope="col">Time</th>
+                <th scope="col">Room No.</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Teacher Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>9:00 am - 10:00 am</td>
+                <td>101</td>
+                <td>Machine Learning</td>
+                <td>Neha Singh</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>10:00 am - 11:00 am</td>
+                <td>210</td>
+                <td>Operating System</td>
+                <td>Raj Shrama</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>11:00 am - 12:00 pm</td>
+                <td>108</td>
+                <td>Cloud Computing</td>  
+                <td>Muskan Maurya</td>  
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+{% endblock body %}

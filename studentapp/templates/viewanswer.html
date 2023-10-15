@@ -1,0 +1,24 @@
+{% extends "studentparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;color: black;">View answer</h1>   
+            <table class="table table-bordered ">
+                <tr>
+                    <th>Ans#</th>
+                    <th>Answer</th>
+                    <th>Answered By</th>
+                    <th>Posted Date</th>
+                </tr>
+                {% for a in ans%}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{a.answer}}</td>
+                        <td>{{a.answerby}}</td>
+                        <td>{{a.posteddate}}</td>
+                    </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </div>
+{% endblock body %}

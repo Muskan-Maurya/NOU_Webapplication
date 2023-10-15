@@ -1,0 +1,52 @@
+{% extends "studentparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;color:black">Discussion Forum</h1> 
+            <form class="form-group" action="{% url 'studentapp:postquestion'%}" method="POST">
+                {% csrf_token %}
+                <table class="table table-bordered " style="width: 60%; margin:auto;">
+                    <tr>
+                        <td>Enter Question</td>
+                        <td>
+                            <textarea name="question" class="form-control text-light" required></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; margin:auto;">
+                        <button type="submit" class="btn btn-warning">Post Question</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>  <br/>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Q#</th>
+                    <th>Question</th>
+                    <th>Posted By</th>
+                    <th>Posted Date</th>
+                    <th>Post Answer</th>
+                    <th>View Answer</th>
+                </tr>
+                {% for q in ques %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{q.question}}</td>
+                        <td>{{q.postedby}}</td>
+                        <td>{{q.posteddate}}</td>
+                        <td>
+                            <a href="{% url 'studentapp:postanswer' qid=q.qid%}">
+                                <button type="button" class="btn btn-success">Post Answer</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'studentapp:viewanswer' qid=q.qid%}">
+                                <button type="button" class="btn btn-success">View Answer</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock body %}

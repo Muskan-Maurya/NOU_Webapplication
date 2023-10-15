@@ -1,0 +1,62 @@
+{% extends "studentparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;color: black;"> Student Profile</h1> 
+            <table class="table table-bordered" style="width:50%;margin: auto;">
+                <tr>
+                    <td>Roll No</td>
+                    <td>{{stu.rollno}}</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{stu.name}}</td>
+                </tr>
+                <tr>
+                    <td>Father Name</td>
+                    <td>{{stu.fname}}</td>
+                </tr>
+                <tr>
+                    <td>Mother Name</td>
+                    <td>{{stu.mname}}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>{{stu.gender}}</td>
+                </tr>
+                <tr>
+                    <td>D.O.B</td>
+                    <td>{{stu.dob}}</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>{{stu.address}}</td>
+                </tr>
+                <tr>
+                    <td>Program</td>
+                    <td>{{stu.program}}</td>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td>{{stu.branch}}</td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td>{{stu.year}}</td>
+                </tr>
+                <tr>
+                    <td>Contact no.</td>
+                    <td>{{stu.contactno}}</td>
+                </tr>
+                <tr>
+                    <td>Email Address</td>
+                    <td>{{stu.emailaddress}}</td>
+                </tr>
+                <tr>
+                    <td>Registration Date</td>
+                    <td>{{stu.regdate}}</td>
+                </tr>
+            </table>  
+        </div>
+    </div>
+{% endblock body %}

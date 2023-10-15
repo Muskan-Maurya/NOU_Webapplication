@@ -1,0 +1,64 @@
+{% extends "parent.html" %}
+{% load static %}
+{% block body %}
+<script>
+    function validate(){
+        var userid = document.getElementById("userid");
+        var password =document.getElementById("password");
+        if(userid.value=="" || userid==null)
+        {
+            alert('Please enter userid');
+            userid.focus();
+        }
+        else if(password.value=="" || password.value==null)
+        {
+            alert('Please enter password ');
+            password.focus();
+        }
+        else{
+            document.getElementById("frmlogin").submit();
+        }
+    }
+</script>
+<h1 style="text-align:center; color:blue;">Login Form</h1><br/>
+    {% if messages %}
+        {% for message in messages%}
+        <p style="color:Green; text-align:center;">{{message}} </p>
+        {% endfor %}
+    {% endif %}
+<div class="row">
+    <div class="col-sm-4">
+        <img class=" mx-5 w-75 h-120" src="{% static 'images/login1.png'%}"/>
+    </div>
+    <div class="col-sm-8 mt-4">
+        <form class="form-group" method="POST" action="{% url 'nouapp:login'%}" id="frmlogin" onsubmit="event.preventDefault();validate();">
+            {% csrf_token %}
+            <table class="table table-dark" style="width:80%; margin:auto;">
+                <tr>
+                    <td>Enter User Id</td>
+                    <td><input type="text" name="userid" class="form-control" id="userid"/></td>
+                </tr>
+                <tr>
+                    <td>Enter Password</td>
+                    <td><input type="password" name="password" class="form-control" id="password"/></td>
+                </tr>
+                <tr>
+                    <td>Enter User Type</td>
+                    <td>
+                        <select name="usertype" class="form-control">
+                            <option selected>--Select User Type</option>
+                            <option value="student">Student</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><button type="submit" class="btn btn-success">Login</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<br/><br/>
+{% endblock %}
